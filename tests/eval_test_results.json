@@ -1,0 +1,93 @@
+{
+  "summary": {
+    "all_tests_passed": true,
+    "total_tests": 4,
+    "passed_tests": 4
+  },
+  "results": [
+    {
+      "test_case": "Excellent answer",
+      "score": 1.0,
+      "expected_range": "0.75-1.00",
+      "passed": true,
+      "details": {
+        "pattern_recognition": 25,
+        "pattern_recognition_justification": "The agent successfully identifies the recurring issue across multiple GitHub issues, demonstrating excellent pattern recognition.",
+        "specific_evidence": 25,
+        "specific_evidence_justification": "The agent provides specific issue numbers and error locations, offering precise evidence to support the analysis.",
+        "root_cause_analysis": 25,
+        "root_cause_analysis_justification": "The agent accurately identifies the root cause as the use of an outdated DSPy version with legacy assertion implementations.",
+        "actionable_insights": 25,
+        "actionable_insights_justification": "The agent provides a clear and practical recommendation to upgrade to DSPy v2.6+, which resolves the issue.",
+        "total_score": 100,
+        "overall_assessment": "The agent's response is thorough and well-structured, covering all aspects of the problem with excellent pattern recognition, specific evidence, root cause analysis, and actionable insights.",
+        "source_answer_length": 1399,
+        "agent_answer_length": 1583,
+        "task_id": "pattern_recognition_teleprompter_crash"
+      }
+    },
+    {
+      "test_case": "Good answer",
+      "score": 0.7,
+      "expected_range": "0.60-0.79",
+      "passed": true,
+      "details": {
+        "pattern_recognition": 20,
+        "pattern_recognition_justification": "The agent identifies the recurring issue but does not specify the exact issue numbers.",
+        "specific_evidence": 10,
+        "specific_evidence_justification": "The agent lacks specific issue numbers and links that are present in the source answer.",
+        "root_cause_analysis": 20,
+        "root_cause_analysis_justification": "The agent correctly identifies the root cause as a version compatibility issue with DSPy.",
+        "actionable_insights": 20,
+        "actionable_insights_justification": "The agent provides a practical solution by recommending an upgrade to a newer DSPy version.",
+        "total_score": 70,
+        "overall_assessment": "The agent's answer is generally accurate and provides a good analysis of the problem and solution. However, it lacks specific evidence and references that would strengthen its response.",
+        "source_answer_length": 1399,
+        "agent_answer_length": 1102,
+        "task_id": "pattern_recognition_teleprompter_crash"
+      }
+    },
+    {
+      "test_case": "Fair answer",
+      "score": 0.6,
+      "expected_range": "0.40-0.65",
+      "passed": true,
+      "details": {
+        "pattern_recognition": 15,
+        "pattern_recognition_justification": "The agent recognizes the issue as a version problem but does not identify specific recurring issues or patterns across multiple GitHub issues.",
+        "specific_evidence": 10,
+        "specific_evidence_justification": "The agent does not provide specific issue numbers or commit evidence, which are crucial for supporting the analysis.",
+        "root_cause_analysis": 20,
+        "root_cause_analysis_justification": "The agent correctly identifies the root cause as a version issue but does not specify the exact version needed to resolve the problem.",
+        "actionable_insights": 15,
+        "actionable_insights_justification": "The agent provides general recommendations to update DSPy and check syntax but lacks the specificity of upgrading to DSPy v2.6+.",
+        "total_score": 60,
+        "overall_assessment": "The agent's answer identifies the problem as a version issue and provides some practical recommendations. However, it lacks specific evidence and detailed pattern recognition, which are present in the source answer. The root cause is partially addressed, but the solution lacks specificity.",
+        "source_answer_length": 1399,
+        "agent_answer_length": 517,
+        "task_id": "pattern_recognition_teleprompter_crash"
+      }
+    },
+    {
+      "test_case": "Poor answer",
+      "score": 0.05,
+      "expected_range": "0.00-0.24",
+      "passed": true,
+      "details": {
+        "pattern_recognition": 0,
+        "pattern_recognition_justification": "The agent did not identify the recurring pattern of the issue across multiple GitHub issues.",
+        "specific_evidence": 0,
+        "specific_evidence_justification": "The agent did not provide any specific issue numbers, PR numbers, or commit evidence related to the problem.",
+        "root_cause_analysis": 0,
+        "root_cause_analysis_justification": "The agent did not explain the underlying cause of the issue, which is the use of an outdated DSPy version.",
+        "actionable_insights": 5,
+        "actionable_insights_justification": "The agent provided general troubleshooting steps but did not offer specific solutions related to the identified problem.",
+        "total_score": 5,
+        "overall_assessment": "The agent's response was generic and did not address the specific issue of the teleprompter crash. It failed to recognize patterns, provide specific evidence, identify the root cause, or offer targeted actionable insights.",
+        "source_answer_length": 1399,
+        "agent_answer_length": 437,
+        "task_id": "pattern_recognition_teleprompter_crash"
+      }
+    }
+  ]
+}

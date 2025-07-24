@@ -1,0 +1,27 @@
+[
+  {
+    "task_id": "pattern_recognition_teleprompter_crash",
+    "task": "You are in a Github repo. Analyze it to answer the question: My teleprompter crashes with 'Predict object has no attribute new_signature'. How have people tried fixing this before and how do I fix it?",
+    "source_answer": "pattern_recognition_teleprompter_crash.md"
+  },
+  {
+    "task_id": "timeline_async_migration", 
+    "task": "You are in a Github repo. Analyze it to answer the question: How long did async migration take in DSPy?",
+    "source_answer": "timeline_async_migration.md"
+  },
+  {
+    "task_id": "system_adapter_logic",
+    "task": "You are in a Github repo. Analyze it to answer the question: I am confused why there are multiple adapters and worry about wasting tokens. What is the logic between how the adapters interact with each other?",
+    "source_answer": "system_adapter_logic.md"
+  },
+  {
+    "task_id": "contributor_datetime_expertise",
+    "task": "You are in a Github repo. Analyze it to answer the question: I have a datetime serialization bug in adapters. Who is the most knowledgeable person on this part of the codebase, based on their past commits and reviews?",
+    "source_answer": "contributor_datetime_expertise.md"
+  },
+  {
+    "task_id": "optimization_inference_speed",
+    "task": "You are in a Github repo. Analyze it to answer the question: What optimizations can I make to speed up inference of my DSPy calls?",
+    "source_answer": "optimization_inference_speed.md"
+  }
+] 

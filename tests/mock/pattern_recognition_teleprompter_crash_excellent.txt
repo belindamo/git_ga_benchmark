@@ -1,0 +1,37 @@
+# Teleprompter Crash: 'Predict object has no attribute new_signature'
+
+## Analysis
+
+This is a well-documented recurring issue across multiple GitHub issues in the DSPy repository. I found evidence of this same error pattern in issues #1059, #1116, and #386.
+
+## Pattern Recognition
+
+Multiple users have reported identical crashes with the same error message. The pattern shows:
+- Error occurs in dspy/primitives/assertions.py line 260
+- Affects users trying to use teleprompters with assertions
+- Consistently resolved by version upgrades
+
+## Root Cause Analysis
+
+The root cause is using an outdated DSPy version that still contains legacy assertion implementations. Specifically, the 'new_signature' attribute and old assertion implementations (v1) were removed in DSPy v2.6+.
+
+## Past Solutions Attempted
+
+From the issue threads, users have tried:
+1. Removing assertions from their code
+2. Downgrading to earlier DSPy versions
+3. Switching to different teleprompters
+4. Various workarounds with assertion syntax
+
+## Recommended Fix
+
+**Upgrade to DSPy v2.6 or later.** According to issue #1116, maintainers confirmed that "none of these components (new_signature; old implementation of assertions v1) are in 2.6."
+
+This error will be completely resolved by upgrading since the problematic legacy code has been removed entirely from the codebase.
+
+## Evidence Sources
+
+- Issue #1116: Direct maintainer confirmation about v2.6 changes
+- Issue #1059: Multiple user reports of same error
+- Issue #386: Additional pattern confirmation
+- Error location: dspy/primitives/assertions.py:260 

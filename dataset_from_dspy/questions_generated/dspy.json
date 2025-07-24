@@ -1,0 +1,144 @@
+[
+  {
+    "task_id": "bug_pattern_unicode_decode_error",
+    "task": "You are in a Github repo. Analyze it to answer the question: I'm encountering `UnicodeDecodeError: 'gbk' codec can't decode` when working with the repository. What are the common root causes for this error within this codebase, and what specific files or areas have been modified to address it?",
+    "success_criteria": "The response should identify that the `UnicodeDecodeError` typically stems from incorrect character encoding assumptions, particularly when reading or writing files. It should list file paths within the repository (e.g., in `dspy/utils/python_interpreter.py` or related to loading saved optimizations) that were modified to explicitly handle UTF-8 encoding to resolve this issue.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "bug_pattern_miprov2_behavior",
+    "task": "You are in a Github repo. Analyze it to answer the question: I'm trying to optimize my DSPy programs using `dspy.MIPROv2`, but I've noticed that even when I set `max_bootstrapped_demos` and `max_labeled_demos` to 0, it still performs bootstrapping. Why does this happen, and what is the intended behavior for zero-shot optimization with MIPROv2 regarding demo generation?",
+    "success_criteria": "The response should explain that `MIPROv2` internally bootstraps examples for the purpose of instruction *proposal* (to help the optimizer generate better instructions), even if the final optimized program is intended to be zero-shot. It should clarify that setting `auto=None` during `MIPROv2` initialization allows for fine-grained control over these parameters, preventing unintended demo usage in the final program. The explanation should reference the relevant optimizer files (e.g., `dspy/teleprompt/mipro_optimizer_v2.py`) and their logic.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "bug_pattern_xmladapter_evolution",
+    "task": "You are in a Github repo. Analyze it to answer the question: I'm having trouble with `dspy.XMLAdapter` not correctly parsing nested XML structures. Has this been a known issue, and what significant changes were introduced to the `XMLAdapter` to improve its handling of complex or hierarchical XML data?",
+    "success_criteria": "The response should confirm that previous versions of `XMLAdapter` had limitations with hierarchical XML parsing. It should describe that recent significant changes involved replacing regex-based parsing with a more robust XML parsing library (e.g., `xml.etree.ElementTree`) to properly support nested Pydantic models, repeated tags (for lists), and mixed data types. The answer should point to the `dspy/adapters/xml_adapter.py` file as the primary location of these modifications.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "bug_pattern_llm_config_errors",
+    "task": "You are in a Github repo. Analyze it to answer the question: I'm experiencing `BadRequestError` when configuring certain LLMs (like Gemini or LM Studio models) with specific parameters (e.g., `track_usage` or `response_format`). What is the underlying pattern of these errors, and how are these LLM clients designed to handle provider-specific configurations or response formats?",
+    "success_criteria": "The response should explain that `BadRequestError` often occurs because different LLM providers have varying support for advanced parameters (like `track_usage` or specific `response_format` types). It should describe that `dspy.LM` and its underlying `litellm` integration attempt to manage these differences, sometimes by falling back to a simpler mode (e.g., JSON mode) if a structured output format is not supported by the model. The explanation should reference relevant files in `dspy/clients/lm.py` and adapter files like `dspy/adapters/json_adapter.py`.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "bug_pattern_docs_inconsistencies",
+    "task": "You are in a Github repo. Analyze it to answer the question: I've noticed several inconsistencies and errors in the documentation, such as outdated version numbers or incorrect example outputs. What kind of recurring issues have been identified in the documentation, and what types of commits are typically made to address these?",
+    "success_criteria": "The response should identify recurring documentation issues such as outdated version references, incorrect example code or outputs, and broken internal or external links. It should describe that commits addressing these issues frequently involve direct modifications to markdown files (e.g., `.md` or `.ipynb` files) within the `docs/` or `tutorials/` directories, focusing on correcting text, updating code snippets, or fixing hyperlink paths.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "timeline_dspy_code_evolution",
+    "task": "You are in a Github repo. Analyze it to answer the question: Describe the evolution of the `dspy.Code` feature, including its initial introduction and subsequent enhancements for language specification.",
+    "success_criteria": "The answer should identify the commit that introduced `dspy.Code` (e.g., via a new file or class definition) and the commit that added language specification support (e.g., `dspy.Code[\"java\"]`), detailing the core changes in each phase.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "timeline_async_parallel_dev",
+    "task": "You are in a Github repo. Analyze it to answer the question: Trace the development of asynchronous and parallel execution capabilities within the repository, highlighting key additions like `dspy.syncify` and async support for `dspy.Evaluate`, and any related issues or fixes.",
+    "success_criteria": "The answer should describe the introduction of `dspy.syncify`, the addition of async support for `dspy.Evaluate`, and mention the fix for OpenTelemetry propagation in `ParallelExecutor`, noting the chronological order of these developments by referencing the respective changes in the codebase.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "timeline_xmladapter_improvements",
+    "task": "You are in a Github repo. Analyze it to answer the question: Detail the significant improvements made to the `XMLAdapter`, specifically regarding its ability to handle nested data and support token streaming.",
+    "success_criteria": "The answer should identify the changes that enabled nested-data support and token streaming for `XMLAdapter`, explaining the technical approach taken for each improvement (e.g., switch from regex to ElementTree for parsing, or how streaming was implemented for XML).",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "timeline_miprov2_behavior",
+    "task": "You are in a Github repo. Analyze it to answer the question: Explain how the MIPROv2 optimizer's behavior regarding few-shot example generation has been clarified or changed, particularly concerning cases where users intended for zero-shot optimization.",
+    "success_criteria": "The answer should describe the behavior where MIPROv2 was generating few-shot examples even when `max_bootstrapped_demos` was set to 0, and explain the clarification or change in logic that addresses this, referencing the relevant code modifications or discussions about the `auto` parameter's interaction with demo limits.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "timeline_docs_maintenance",
+    "task": "You are in a Github repo. Analyze it to answer the question: Summarize the recent efforts to improve and maintain the repository's documentation, including fixes for broken links, warnings, and content updates.",
+    "success_criteria": "The answer should mention recent changes related to fixing documentation warnings (e.g., Mkdoc warnings), resolving broken links in tutorials, updating tutorial explanations, and correcting examples in guides, indicating the ongoing nature of documentation improvements.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "system_adapter_structured_io",
+    "task": "Explain the design rationale behind DSPy's adapter system, especially how it handles structured outputs (like JSON or XML) and streaming across different Language Models. Provide details on any fallback mechanisms for structured output.",
+    "success_criteria": "The explanation describes how different adapter classes manage the conversion of DSPy signatures to LM-specific prompts and parse LM responses. It should detail how streaming works for structured data and cover the purpose of fallback mechanisms when a preferred structured output format is not supported by an LM. This can be verified by inspecting the adapter classes and their interaction with the LM clients."
+  },
+  {
+    "task_id": "system_concurrency_tracing",
+    "task": "Describe how DSPy ensures proper tracing and context propagation across parallel execution units, specifically within components designed for concurrent operations.",
+    "success_criteria": "The explanation identifies the core components responsible for parallel execution (e.g., ParallelExecutor) and how they manage context for tracing tools. It should detail the mechanism used to propagate tracing information across different threads or asynchronous tasks to maintain a coherent trace tree, verifiable by examining the relevant source files."
+  },
+  {
+    "task_id": "system_optimizer_demo_management",
+    "task": "Analyze the behavior of DSPy's optimizers regarding the generation and use of few-shot examples, even when explicitly configured for zero-shot optimization. Explain the design choice behind this behavior.",
+    "success_criteria": "The explanation identifies the optimizer components involved in bootstrapping demonstrations and their role in the overall optimization process. It should clarify why demonstrations might still be generated or used internally, even if the final compiled program is intended for zero-shot inference, and how these internal demos contribute to instruction proposal. This can be verified by reviewing the optimizer's source code and its logging behavior."
+  },
+  {
+    "task_id": "system_new_primitive_type_integration",
+    "task": "Explain the architectural implications of introducing new primitive types, like `dspy.Code`, into the DSPy signature system. How do these new types interact with existing components, particularly regarding language specification or parsing?"
+  },
+  {
+    "task_id": "system_async_sync_compatibility",
+    "task": "Describe the mechanism DSPy provides to enable the use of optimizers on asynchronous DSPy programs, considering the inherent differences between synchronous and asynchronous execution models."
+  },
+  {
+    "task_id": "people_async_concurrency_expertise",
+    "task": "I'm encountering issues with concurrency and parallel execution in DSPy, specifically related to `dspy.Parallel` or `dspy.Evaluate` running asynchronously. Who would be the most knowledgeable person to consult for help with these types of issues?",
+    "success_criteria": "Identify contributors who have recently made code changes or participated in discussions related to asynchronous operations, multithreading, or parallel execution within the `dspy.Evaluate` or `dspy.ParallelExecutor` components.",
+  },
+  {
+    "task_id": "people_xml_adapter_expertise",
+    "task": "I'm having trouble with DSPy's `XMLAdapter` not correctly parsing nested data structures from LLM outputs. Who should I reach out to for assistance with `XMLAdapter` or structured output parsing in general?",
+    "success_criteria": "Identify contributors who have recently made significant code changes to the `XMLAdapter` or other adapter implementations, particularly those addressing structured output parsing or nested data support.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "people_documentation_maintainer",
+    "task": "I've found several broken links and outdated information in the DSPy documentation. Who is the primary contributor responsible for maintaining and improving the documentation and tutorials?",
+    "success_criteria": "Identify the contributor who has made multiple recent code changes related to fixing documentation warnings, broken links, or updating tutorial content within the `/docs` or `/tutorials` directories.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "people_mipro_optimizer_expertise",
+    "task": "I'm trying to use `MIPROv2` for 0-shot instruction optimization, but it seems to still be generating and using few-shot examples. Who has expertise in `MIPROv2` and its few-shot/zero-shot behavior?",
+    "success_criteria": "Identify contributors who have recently made code changes or actively discussed the behavior of `MIPROv2` or other optimizers, particularly regarding the handling of few-shot example generation or optimization parameters.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "people_encoding_issues",
+    "task": "I'm experiencing a `UnicodeDecodeError` when DSPy tries to load something related to saved optimizations or the Python interpreter. Who would be the best person to contact for help with Unicode or encoding-related bugs in the codebase?",
+    "success_criteria": "Identify the contributor who has recently committed fixes specifically addressing `UnicodeDecodeError` or other encoding issues within core utility files or data loading mechanisms.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "eval_async_performance_analysis",
+    "task": "Investigate the efforts to introduce asynchronous execution capabilities to `dspy.Evaluate`. Describe the primary motivation for this change, the different concurrent execution strategies considered or implemented (e.g., multithreading vs. async event loop), and any comparative performance observations or challenges noted during its development.",
+    "success_criteria": "Agent identifies the addition of async support for `dspy.Evaluate`, explains the goal of improving evaluation speed, details the comparison between multithreading and async event loop approaches, and mentions any observed performance nuances (e.g., async not consistently faster) or underlying theories (e.g., provider bottlenecks).",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "optimizer_async_program_support",
+    "task": "Explain the functionality and purpose of the `dspy.syncify` utility. What specific problem does it address for users who want to apply optimizers to asynchronous DSPy programs, and what are the two distinct modes of operation (`in-place` versus `wrapper`) that this utility provides?",
+    "success_criteria": "Agent describes `dspy.syncify` as a tool to enable optimizers on async DSPy programs. It differentiates between the \"in-place\" mode (patching `forward`) and the \"wrapper\" mode (returning a new module), noting their architectural implications.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "xml_adapter_streaming_feature",
+    "task": "Detail the implementation of token streaming support for the `XMLAdapter`. What was the primary motivation behind adding this feature, and how does it aim to improve the interactive experience or perceived latency for users interacting with language models that produce XML output?",
+    "success_criteria": "Agent identifies the addition of token streaming to `XMLAdapter`, explains its purpose in providing real-time output, and connects it to improving user experience by reducing perceived latency for LLM responses.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "xml_adapter_nested_data_efficiency",
+    "task": "Analyze the architectural changes made to the `XMLAdapter` to support nested data structures. Describe the limitations of the previous parsing method and how the new approach addresses these. Discuss the considerations regarding model understanding and the relative efficiency of generating 'pure nested XML' compared to 'JSON-in-XML' during this evolution.",
+    "success_criteria": "Agent explains the transition of `XMLAdapter` from regex-based parsing to `ElementTree` for nested XML support, identifying the previous limitation. It also discusses the comparative evaluation of \"JSON-in-XML\" versus \"pure nested XML\" strategies in terms of model performance and output structure.",
+    "dir_name": "github_qa/dspy"
+  },
+  {
+    "task_id": "parallel_executor_tracing_impact",
+    "task": "Describe the fundamental purpose of `dspy.Parallel` in a DSPy program and how it contributes to performance. Furthermore, explain the issue identified with its integration with OpenTelemetry tracing and how this issue impacted the ability to accurately observe the execution flow of parallel operations.",
+    "success_criteria": "Agent identifies `dspy.Parallel` as a module designed for performance through concurrent execution (e.g., multithreading). It explains that a problem existed with OpenTelemetry context propagation, which hindered accurate tracing and visualization of parallel operations, and how this was addressed.",
+    "dir_name": "github_qa/dspy"
+  }
+]

@@ -1,0 +1,15 @@
+# Teleprompter Issue
+
+## Problem
+Getting an error about 'new_signature' attribute not found.
+
+## Analysis
+This looks like a version problem with DSPy. Some users have reported similar issues before.
+
+## What to Try
+1. Try updating DSPy to the latest version
+2. Check if your code is using the right syntax
+3. Maybe try a different teleprompter if the update doesn't work
+
+## Additional Info
+The error seems to happen when using certain features together. Updating usually fixes these kinds of compatibility problems. 

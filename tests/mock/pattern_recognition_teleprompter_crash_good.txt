@@ -1,0 +1,22 @@
+# Teleprompter Error Analysis
+
+## Problem
+You're getting a 'Predict object has no attribute new_signature' error when using teleprompters.
+
+## Analysis
+I found several GitHub issues reporting this same error. It seems to be a common problem that multiple users have encountered.
+
+## Root Cause
+This appears to be related to version compatibility issues with DSPy. The error suggests that your version of DSPy is trying to access attributes that may have been removed or changed.
+
+## Solutions People Have Tried
+Based on the issues I found:
+- Some users tried removing assertions from their code
+- Others attempted to downgrade their DSPy version
+- Switching to different teleprompter types was also attempted
+
+## Recommended Solution
+The most effective solution appears to be updating to a newer version of DSPy (v2.6 or later). The newer versions have resolved these compatibility issues by removing the problematic legacy code.
+
+## Additional Notes
+This error typically occurs in the assertions module, so if you're using assertions with teleprompters, that's likely where the conflict is happening. 
