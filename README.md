@@ -31,8 +31,6 @@ uv run utils/generate_tasks/github_tasks.py https://github.com/stanfordnlp/dspy 
 
 ### Evaluate
 
-Try out the evaluation by running `uv run tests/test_eval.py`.
-
 You can also run the evaluation with the following commands.
 
 Evaluate all tasks:
@@ -54,6 +52,15 @@ Save results to JSON file:
 ```bash
 uv run eval.py --output results.json
 ```
+
+### Test the Evaluation System
+
+Run the test suite to validate the evaluation system:
+```bash
+uv run python tests/test_eval.py
+```
+
+This test uses mock answers of varying quality to ensure the scoring system works correctly.
 
 # 5 Task Types
 

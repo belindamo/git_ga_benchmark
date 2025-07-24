@@ -1,0 +1,52 @@
+🚀 Starting git-qa-benchmark evaluation tests
+==================================================
+
+🔧 Testing basic evaluation functionality...
+✅ Successfully loaded 5 tasks
+✅ Found source answer: pattern_recognition_teleprompter_crash
+✅ Found source answer: timeline_async_migration
+✅ Found source answer: system_adapter_logic
+✅ Found source answer: contributor_datetime_expertise
+✅ Found source answer: optimization_inference_speed
+
+🧪 Testing evaluation system with mock answers...
+
+Test 1: Excellent answer
+  Score: 1.00 (expected: 0.75-1.00) ✅ PASS
+    Pattern Recognition: 25/25
+    Specific Evidence: 25/25
+    Root Cause Analysis: 25/25
+    Actionable Insights: 25/25
+    Total: 100/100
+
+Test 2: Good answer
+  Score: 0.70 (expected: 0.60-0.79) ✅ PASS
+    Pattern Recognition: 20/25
+    Specific Evidence: 10/25
+    Root Cause Analysis: 20/25
+    Actionable Insights: 20/25
+    Total: 70/100
+
+Test 3: Fair answer
+  Score: 0.60 (expected: 0.40-0.65) ✅ PASS
+    Pattern Recognition: 15/25
+    Specific Evidence: 10/25
+    Root Cause Analysis: 20/25
+    Actionable Insights: 15/25
+    Total: 60/100
+
+Test 4: Poor answer
+  Score: 0.05 (expected: 0.00-0.24) ✅ PASS
+    Pattern Recognition: 0/25
+    Specific Evidence: 0/25
+    Root Cause Analysis: 0/25
+    Actionable Insights: 5/25
+    Total: 5/100
+
+📄 Detailed results saved to: tests/eval_test_results.json
+
+📊 Summary: 4/4 tests passed
+🎉 All tests passed! Evaluation system is working correctly.
+
+==================================================
+🎉 All tests passed! Evaluation system is ready to use.
